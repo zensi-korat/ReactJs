@@ -1,19 +1,12 @@
-import { useState } from "react";
 import "./App.css";
-import ToggleSwitch from "./components/projects/ToggleSwitch/ToggleSwitch";
-import Todo from "./components/projects/Todo/Todo";
-import GettingStarted from "./components/projects/GettingStarted/GettingStarted";
-import ShortCircuit from "./components/hooks/ShortCircuit";
-import CounterChallenge from "./components/hooks/useState/Challange";
-import { RegistrationForm } from "./components/hooks/useState/Registration";
-import { ContactForm } from "./components/hooks/useState/ContactForm";
-import ReactUseEffect from "./components/hooks/useEffect";
-import { EffectChallenge } from "./components/hooks/useEffect/EffectChallange";
+import { ApiFetch } from "./components/hooks/useEffect/ApiFetch";
+import ApiNot from "./components/hooks/useEffect/ApiNot";
 
 function App() {
   return (
     <>
-      <EffectChallenge />
+      <ApiNot />
+      {/* <EffectChallenge /> */}
       {/* <ReactUseEffect /> */}
       {/* <ContactForm /> */}
       {/* <RegistrationForm /> */}
