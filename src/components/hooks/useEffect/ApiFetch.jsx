@@ -1,61 +1,52 @@
-import "./Pokemon.css";
 import { useEffect, useState } from "react";
 
-export const ApiFetch = () => {
+function ApiNot() {
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
-  const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
-
-  //   const fetchPokemon = () => {
+  const API = "https://pokeapi.co/api/v2/pokemon/squirtle";
+  //   const fetchpokemon = () => {
   //     fetch(API)
   //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setPokemon(data);
-  //         setLoading(false);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //         setError(error);
-  //         setLoading(false);
-  //       });
+  //       .then((data) => {})
+  //       .catch((error) => {});
   //   };
-
-  const fetchPokemon = async () => {
+  const fetchpokemon = async () => {
     try {
       const res = await fetch(API);
       const data = await res.json();
       setPokemon(data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
-      setError(error);
+      console.error(error);
       setLoading(false);
+      setError(error);
     }
   };
 
   useEffect(() => {
-    fetchPokemon();
+    fetchpokemon();
   }, []);
 
   console.log(pokemon);
 
-  if (loading)
+  if (loading) {
     return (
       <div>
-        <h1>Loading....</h1>
+        <h1>Loading ⏰</h1>
       </div>
     );
+  }
 
-  if (error)
+  if (error) {
     return (
       <div>
-        <h1>Error: {error.message} </h1>
+        <h1>{error.message}</h1>
       </div>
     );
+  }
 
-  //   if (pokemon) {
   return (
     <section className="container">
       <header>
@@ -67,7 +58,6 @@ export const ApiFetch = () => {
             <img
               src={pokemon.sprites.other.dream_world.front_default}
               alt={pokemon.name}
-              className="pokemon-image"
             />
           </figure>
           <h1>{pokemon.name}</h1>
@@ -86,4 +76,6 @@ export const ApiFetch = () => {
       </ul>
     </section>
   );
-};
+}
+
+export default ApiNot;

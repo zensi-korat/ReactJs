@@ -1,11 +1,11 @@
 import "./App.css";
-import { ApiFetch } from "./components/hooks/useEffect/ApiFetch";
-import ApiNot from "./components/hooks/useEffect/ApiNot";
+import Pokemon from "./components/hooks/useEffect/Pokemon/Pokemon";
 
 function App() {
   return (
     <>
-      <ApiNot />
+      <Pokemon />
+      {/* <ApiFetch /> */}
       {/* <EffectChallenge /> */}
       {/* <ReactUseEffect /> */}
       {/* <ContactForm /> */}
