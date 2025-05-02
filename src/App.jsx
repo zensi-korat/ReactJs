@@ -2,12 +2,15 @@ import "./App.css";
 import { BioProvider } from "./components/hooks/ContextAPI";
 import About from "./components/hooks/ContextAPI/About";
 import Home from "./components/hooks/ContextAPI/Home";
+import { ThemeParentContext } from "./components/hooks/ContextAPI/Theming";
+import ChildC from "./components/hooks/ContextAPI/Theming/ChildC";
 import MainProp from "./components/PropTypes/main";
 
 function App() {
   return (
     <>
-      <MainProp />
+      <ThemeParentContext />
+      {/* <MainProp /> */}
       {/* <BioProvider>
         <Home />
         <About />
