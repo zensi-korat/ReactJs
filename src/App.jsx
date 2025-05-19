@@ -1,15 +1,13 @@
 import "./App.css";
-import { BioProvider } from "./components/hooks/ContextAPI";
-import About from "./components/hooks/ContextAPI/About";
-import Home from "./components/hooks/ContextAPI/Home";
-import { ThemeParentContext } from "./components/hooks/ContextAPI/Theming";
-import ChildC from "./components/hooks/ContextAPI/Theming/ChildC";
-import MainProp from "./components/PropTypes/main";
+import CallbackDemo from "./components/hooks/useCallback";
+import MemoDemo from "./components/hooks/useMemo";
 
 function App() {
   return (
     <>
-      <ThemeParentContext />
+      {/* <CallbackDemo /> */}
+      <MemoDemo />
+      {/* <ThemeParentContext /> */}
       {/* <MainProp /> */}
       {/* <BioProvider>
         <Home />
